@@ -18,6 +18,7 @@ module FoundationRailsHelper
     def label(attribute, text = nil, options = {})
       options[:class] ||= ""
       options[:class] += " error" if has_error?(attribute)
+      options[:class] += " required" if object.class.validators_on(attribute).map(&:class).any? {|v| [ActiveModel::Validations::PresenceValidator, ActiveRecord::Validations::PresenceValidator].include? v}
       super(attribute, (text || "").html_safe, options)
     end
 
