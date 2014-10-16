@@ -53,7 +53,7 @@ A classic devise sign up view will look like this:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'zurb-foundation'
+gem 'foundation-rails'
 gem 'foundation_rails_helper'
 ```
 
